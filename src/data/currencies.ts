@@ -18,7 +18,6 @@ const getCurrencyName = (code: string): string => {
   }
 };
 
-// ফ্ল্যাগের ইমেজের URL তৈরি করার হেলপার
 const getFlagUrl = (currencyCode: string): string => {
   const exceptions: Record<string, string> = {
     EUR: "eu",

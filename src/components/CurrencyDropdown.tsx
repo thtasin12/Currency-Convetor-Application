@@ -145,7 +145,7 @@ export default function CurrencyDropdown({
                 </div>
               </div>
               {selectedCode === c.code && (
-                <span style={{ color: "#ff9500", fontSize: "18px" }}>✓</span>
+                <span style={{ color: "orange", fontSize: "18px" }}>✓</span>
               )}
             </div>
           ))
