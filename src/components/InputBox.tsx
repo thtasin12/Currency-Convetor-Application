@@ -16,7 +16,6 @@ export default function InputBox({
   amount,
   currencyName,
   flag,
-  isBase = false,
   isActive = false,
   onCurrencyClick,
   onAmountClick,
@@ -42,7 +41,18 @@ export default function InputBox({
           cursor: "pointer",
         }}
       >
-        {flag && <span style={{ fontSize: "20px" }}>{flag}</span>}
+        {flag && (
+          <img
+            src={flag}
+            alt={code}
+            style={{
+              width: 24,
+              height: 16,
+              borderRadius: 2,
+              objectFit: "cover",
+            }}
+          />
+        )}
         <div>
           <div style={{ fontSize: "18px", fontWeight: "bold", fontStyle: "italic" }}>
             {code} <span style={{ fontSize: "10px", color: "#666" }}>▼</span>

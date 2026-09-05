@@ -18,7 +18,7 @@ export default function CurrencyDropdown({
   onClose,
   excludeCodes = [],
 }: CurrencyDropdownProps) {
-    console.log("API Currencies Data:", currencies);
+  console.log("API Currencies Data:", currencies);
   const [search, setSearch] = useState("");
 
   if (!isOpen) return null;
@@ -26,7 +26,7 @@ export default function CurrencyDropdown({
   const filteredCurrencies = currencies.filter((c) => {
     const isExcluded = excludeCodes.includes(c.code);
     const searchTerm = search.toLowerCase().trim();
-    
+
     const matchesCode = c.code ? c.code.toLowerCase().includes(searchTerm) : false;
     const matchesName = c.name ? c.name.toLowerCase().includes(searchTerm) : false;
 
@@ -125,7 +125,18 @@ export default function CurrencyDropdown({
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <span style={{ fontSize: "20px" }}>{c.flag}</span>
+                {c.flag && (
+                  <img
+                    src={c.flag}
+                    alt={c.code}
+                    style={{
+                      width: 24,
+                      height: 16,
+                      borderRadius: 2,
+                      objectFit: "cover",
+                    }}
+                  />
+                )}
                 <div>
                   <div style={{ fontWeight: "600", fontSize: "16px" }}>
                     {c.code}
